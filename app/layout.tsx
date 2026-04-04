@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/language'
@@ -43,6 +44,12 @@ export default function RootLayout({
           {children}
         </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
+                  <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4276130467303652"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
       </body>
     </html>
   )
