@@ -2,10 +2,17 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export function SubmitCourtLink() {
   const pathname = usePathname()
-  const isActive = pathname === "/submit"
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const isActive = mounted && pathname === "/submit"
 
   return (
     <Link
