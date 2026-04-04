@@ -2,12 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { SubmitCourtLink } from "./submit-court-link"
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const pathname = usePathname()
-  const isSubmitPage = pathname === "/submit"
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
@@ -57,16 +55,7 @@ export function SiteHeader() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/submit"
-            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-opacity ${
-              isSubmitPage
-                ? "bg-primary/10 text-primary cursor-default"
-                : "bg-primary text-primary-foreground hover:opacity-90"
-            }`}
-          >
-            Submit a Court
-          </Link>
+          <SubmitCourtLink />
         </div>
 
         {/* Mobile burger */}
