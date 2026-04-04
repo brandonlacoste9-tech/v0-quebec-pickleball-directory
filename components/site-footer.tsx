@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export function SiteFooter() {
   const year = new Date().getFullYear()
 
@@ -32,12 +34,12 @@ export function SiteFooter() {
             <p className="mt-1 text-xs text-white/40">
               The unofficial directory of all pickleball courts in Quebec.
             </p>
-            <a
-              href="mailto:info@pickleballqc.ca"
+            <Link
+              href="/submit"
               className="mt-5 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Soumettre un terrain / Submit a Court
-            </a>
+              Submit a Court / Soumettre un terrain
+            </Link>
           </div>
 
           {/* Quick links */}
