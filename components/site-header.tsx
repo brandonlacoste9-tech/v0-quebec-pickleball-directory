@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { SubmitCourtLink } from "./submit-court-link"
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -55,7 +54,12 @@ export function SiteHeader() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <SubmitCourtLink />
+          <Link
+            href="/submit"
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Submit a Court
+          </Link>
         </div>
 
         {/* Mobile burger */}
